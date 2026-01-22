@@ -21,7 +21,7 @@ title: Proposal
 > incorrect algorithm or method, and you’ll be able to switch to different ones at any point that it makes
 > sense later in the project
 
-## Evaluation Plan (30 points)
+## Evaluation Plan
 > As described in class, mention how you will evaluate the success of your project. In a paragraph, focus
 > on the quantitative evaluation: what are the metrics, what are the baselines, how much you expect your
 > approach to improve the metric by (just a ballpark is enough), what data will you evaluate on, etc. In
