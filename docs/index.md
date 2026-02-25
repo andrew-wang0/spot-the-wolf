@@ -17,3 +17,7 @@ Our project aims to build a real-time wolf detection system for Minecraft that l
 
 View the [Source Code](https://github.com/andrew-wang0/cs175-wolf-detector-main)
 
+## Resources
+
+Our project uses [NeoForged](https://neoforged.net/) for automated data generation in Minecraft. 
+We also use [ultralytics](https://www.ultralytics.com/) YOLO models for object detection.
