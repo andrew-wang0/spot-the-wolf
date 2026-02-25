@@ -66,9 +66,13 @@ All coordinates are normalized to the range [0, 1] relative to image dimensions.
 
 The `wolf_yolo26_uno` training script operates on the pre-split dataset layout (train/val directories).
 
-**Hyperparameters.** We train for 60 epochs with batch size 16 and image size 640x640. The confidence threshold for inference is 0.25 and the IoU threshold for TP matching is 0.5.
+**Hyperparameters** 
 
-**Evaluation script.** After training, `evaluation/main.py` loads the saved `best.pt` weights and runs inference on the snow test set (`test_dataset/snow/`). It computes per-image TP/FP/FN counts using greedy highest-confidence-first matching at IoU ≥ 0.5, then aggregates the results.
+We train for 60 epochs with batch size 16 and image size 640x640. The confidence threshold for inference is 0.25 and the IoU threshold for TP matching is 0.5.
+
+**Evaluation script** 
+
+After training, `evaluation/main.py` loads the saved `best.pt` weights and runs inference on the snow test set (`test_dataset/snow/`). It computes per-image TP/FP/FN counts using greedy highest-confidence-first matching at IoU ≥ 0.5, then aggregates the results.
 
 We generate side-by-side expected-vs-predicted images that are exported to `evaluation/output/snow/` for qualitative visual analysis.
 
@@ -83,17 +87,11 @@ v1 used a dataset size of 4 based on randomly generated superflat images.
 
 **Grass (superflat)**
 
-| TP | FP | FN | Precision | Recall |
-|----|----|----|-----------|--------|
-| TODO | TODO | TODO | TODO | TODO |
 
 TODO: brief interpretation of baseline grass results.
 
 **Overworld**
 
-| TP | FP | FN | Precision | Recall |
-|----|----|----|-----------|--------|
-| TODO | TODO | TODO | TODO | TODO |
 
 TODO: brief interpretation of baseline overworld results.
 
@@ -104,9 +102,11 @@ v2 used a dataset size of 250 based on randomly generated superflat images.
 
 **Grass (superflat)**
 
-| TP | FP | FN | Precision | Recall |
-|----|----|----|-----------|--------|
-| 129 | 6 | 0 | 0.9556 | 1.0000 |
+```
+TP=129 FP=6 FN=0
+precision=0.9556
+recall=1.0000
+```
 
 The model achieves perfect recall (1.00), meaning every ground-truth wolf instance in the grass biome dataset was successfully detected with no missed detections. Precision is 95.56%, with only 6 false positive bounding boxes. These results demonstrate that the improved model performs extremely well in controlled test data, both in terms of detection coverage and prediction accuracy.
 
@@ -114,9 +114,6 @@ The model achieves perfect recall (1.00), meaning every ground-truth wolf instan
 
 **Overworld**
 
-| TP | FP | FN | Precision | Recall |
-|----|----|----|-----------|--------|
-| TODO | TODO | TODO | TODO | TODO |
 
 TODO: brief interpretation of improved model overworld results.
 
@@ -155,7 +152,7 @@ A major remaining goal is transitioning from offline evaluation to live deployme
 - Feeds each frame through the trained YOLO model.
 - Overlays predicted bounding boxes and confidence scores onto the game display.
 
-Using NeoForged, we plan to implement a mod that captures live frame data and renders detection results directly onto the screen.
+Using NeoForged, we plan to implement a plugin that captures live frame data and renders detection results directly onto the screen.
 
 ## Resources Used
 
@@ -171,7 +168,7 @@ use you made of AI tools.
 Ultralytics YOLO26 (Previously also used YOLOv8) - model architecture, inference API
 https://docs.ultralytics.com
 
-OpenCV (cv2) - image loading, preprocessing, and drawing bounding boxes for evaluation
+OpenCV (cv2) - image loading,f preprocessing, and drawing bounding boxes for evaluation
 
 Minecraft - game environment used to generate training and evaluation screenshots
 
