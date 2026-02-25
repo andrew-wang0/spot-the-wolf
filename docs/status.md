@@ -68,7 +68,7 @@ The `wolf_yolo26_uno` training script operates on the pre-split dataset layout (
 
 **Hyperparameters** 
 
-We train for 60 epochs with batch size 16 and image size 640x640. The confidence threshold for inference is 0.25 and the IoU threshold for TP matching is 0.5.
+We train for a varying number of epochs (20 for v1, and then 120 for v2) with batch size 16 and image size 640x640. The confidence threshold for inference is 0.25 and the IoU threshold for TP matching is 0.5.
 
 **Evaluation script** 
 
@@ -83,7 +83,7 @@ We compare a v1 model against our improved v2 model across two environments: a c
 In the future, we will add more model comparisons.
 
 ### v1 Model
-v1 used a dataset size of 4 based on randomly generated superflat images.
+v1 used a dataset size of 20 based on randomly generated superflat images.
 
 **Grass (superflat)**
 
@@ -98,15 +98,12 @@ TODO: brief interpretation of baseline overworld results.
 ---
 
 ### v2 Model 
-v2 used a dataset size of 250 based on randomly generated superflat images.
+v2 used a dataset size of 180 based on randomly generated superflat images.
 
 **Grass (superflat)**
 
-```
-TP=129 FP=6 FN=0
-precision=0.9556
-recall=1.0000
-```
+<img width="151" height="79" alt="image" src="https://github.com/user-attachments/assets/3e6ed25c-a71e-4ff5-b17a-0abf2330fdea" />
+
 
 The model achieves perfect recall (1.00), meaning every ground-truth wolf instance in the grass biome dataset was successfully detected with no missed detections. Precision is 95.56%, with only 6 false positive bounding boxes. These results demonstrate that the improved model performs extremely well in controlled test data, both in terms of detection coverage and prediction accuracy.
 
