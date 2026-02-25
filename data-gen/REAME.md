@@ -1,1 +1,0 @@
-Generates Minecraft wolf images for training
