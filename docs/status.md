@@ -19,7 +19,7 @@ your topic since your proposal.
 -->
 Our project aims to build a real-time wolf detection system for Minecraft that locates wolves in a live gameplay environment. The input to the system consists of image frames captured from Minecraft.
 
-These images are collected through a semi-automated data generation process that takes screenshots and associates each wolf with 2D bounding box coordinates in YOLO format through a custom made Minecraft mod.
+The input are images are collected through a semi-automated data generation process that takes screenshots and associates each wolf with 2D bounding box coordinates in YOLO format through a custom made Minecraft mod.
 
 The output of the model is a set of axis-aligned bounding boxes (AABB), each corresponding to a detected wolf in the frame, along with a confidence score. Each bounding box specifies the predicted location of a wolf in image coordinates.
 
@@ -102,8 +102,11 @@ v2 used a dataset size of 180 based on randomly generated superflat images.
 
 **Grass (superflat)**
 
-<img width="151" height="79" alt="image" src="https://github.com/user-attachments/assets/3e6ed25c-a71e-4ff5-b17a-0abf2330fdea" />
-
+```
+TP=129 FP=6 FN=0
+precision=0.9556
+recall=1.0000
+```
 
 The model achieves perfect recall (1.00), meaning every ground-truth wolf instance in the grass biome dataset was successfully detected with no missed detections. Precision is 95.56%, with only 6 false positive bounding boxes. These results demonstrate that the improved model performs extremely well in controlled test data, both in terms of detection coverage and prediction accuracy.
 
