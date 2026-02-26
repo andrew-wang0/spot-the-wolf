@@ -64,7 +64,7 @@ Our dataset consists of Minecraft screenshots containing wolves, paired with bou
 
 All coordinates are normalized to the range [0, 1] relative to image dimensions.
 
-The `wolf_yolo26_uno` training script operates on the pre-split dataset layout (train/val directories).
+The `wolf_yolo26` training script operates on the pre-split dataset layout (train/val directories).
 
 **Hyperparameters** 
 
