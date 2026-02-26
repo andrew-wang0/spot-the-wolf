@@ -90,11 +90,6 @@ v1 used a dataset size of 20 based on randomly generated superflat images.
 
 TODO: brief interpretation of baseline grass results.
 
-**Overworld**
-
-
-TODO: brief interpretation of baseline overworld results.
-
 ---
 
 ### v2 Model 
@@ -111,11 +106,6 @@ recall=1.0000
 The model achieves perfect recall (1.00), meaning every ground-truth wolf instance in the grass biome dataset was successfully detected with no missed detections. Precision is 95.56%, with only 6 false positive bounding boxes. These results demonstrate that the improved model performs extremely well in controlled test data, both in terms of detection coverage and prediction accuracy.
 
 <img width="1920" height="1192" alt="image" src="https://github.com/user-attachments/assets/d8f24730-43e8-4cfa-8397-9c41c14897be" />
-
-**Overworld**
-
-
-TODO: brief interpretation of improved model overworld results.
 
 <!--
 An important aspect of your project, as we mentioned in the beginning, is
