@@ -87,8 +87,15 @@ v1 used a dataset size of 20 based on randomly generated superflat images.
 
 **Grass (superflat)**
 
+```
+TP=20510 FP=3450 FN=2051
+precision=0.8560
+recall=0.9091
+```
 
-TODO: brief interpretation of baseline grass results.
+The v1 model achieves a recall of 90.91%, meaning it successfully detects most wolves on the grass but still misses a noticeable number of instances (FN = 2051). Precision is 85.60%, indicating a moderate number of false positives (FP = 3450) for such a simple scenario.
+
+Overall, the v1 model performs reasonably well in the controlled superflat grass environment, but there is clear room for improvement, which should be handled before we try testing on more complicated environments.
 
 ---
 
@@ -102,12 +109,13 @@ TP=129 FP=6 FN=0
 precision=0.9556
 recall=1.0000
 ```
+<img width="1920" height="1192" alt="image" src="https://github.com/user-attachments/assets/d8f24730-43e8-4cfa-8397-9c41c14897be" />
 
 The model achieves perfect recall (1.00), meaning every ground-truth wolf instance in the grass biome dataset was successfully detected with no missed detections. Precision is 95.56%, with only 6 false positive bounding boxes. These results demonstrate that the improved model performs extremely well in controlled test data, both in terms of detection coverage and prediction accuracy.
 
 Looking over the side-by-side comparisons, we don't see any anomalies such as FP or FN.
-<img width="1920" height="1192" alt="image" src="https://github.com/user-attachments/assets/d8f24730-43e8-4cfa-8397-9c41c14897be" />
 
+Overall, the results are good and the next target stage should be performing well in less controlled environments.
 <!--
 An important aspect of your project, as we mentioned in the beginning, is
 evaluating your project. Be clear and precise about describing the evaluation setup, for both
